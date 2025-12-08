@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body, html{
+  width: 100vw;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.app-header{
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  >h1{
+    text-align: center;
+    margin: 1rem 0;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+#list-display-section{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >*{
+    width: 80%;
+  }
+  >#search-container{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    >#search-bar{
+      flex: 4;
+    }
+    >#search-button{
+      flex: 1;
+      min-width: 4rem;
+    }
   }
 }
 
-.card {
-  padding: 2em;
+#list-container{
+  margin: auto;
+  padding: 0.4rem 0;
 }
 
-.read-the-docs {
-  color: #888;
+#todo-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  >.todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+  }
+}
+
+.todo-item{
+  padding: 0.5rem;
+  min-height: 5.4rem;
+  >.item-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.4rem;
+    >.item-details{
+      width: 80%;
+      >.item-title, >.item-desc{
+        margin-bottom: 0.2rem;
+      }
+      >.item-desc{
+        font-size: clamp(0.8rem, 1vw, 1rem);
+        color: gray;
+      }
+      >.item-bottom{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    >.item-buttons  {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.2rem;
+      >button{
+        height: 1ren;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 }
