@@ -5,8 +5,8 @@
   font-family: monospace;
 }
 
-body, html{
-  width: 100vw;
+#root, body, html{
+  min-width: 100vw;
   min-height: 100dvh;
   overflow-x: hidden;
 }
@@ -19,19 +19,28 @@ body, html{
   }
 }
 
-#list-display-section{
+#list-display-view{
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   >*{
     width: 80%;
+    max-width: 80%;
   }
   >#search-container{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
     padding: 0.2rem 0.4rem;
+    height: clamp(2.5rem, 3vw, 3.5rem);
+    >*{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     >#search-bar{
       flex: 4;
     }
@@ -94,6 +103,41 @@ body, html{
         display: flex;
         justify-content: center;
       }
+    }
+  }
+}
+
+.todo-edit-create-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  >*{
+    width: 80%;
+  }
+  >h1{
+    text-align: center;
+  }
+  >fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    >label{
+      font-weight: bold;
+    }
+    input, >textarea, select{
+      padding: 0.4rem;
+      font-size: 1rem;
+    }
+    >.tag-options{
+      display: flex;
+      gap:0.4rem
+    }
+    >.tag-option{
+      display: flex;
+      flex-direction: column;
     }
   }
 }
